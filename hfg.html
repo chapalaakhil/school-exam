@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Portal</title>
+    <link rel="stylesheet" href="Untitled-2.css">
+</head>
+<body class="container">
+    <div>
+        <h1>Welcome to ABC School Exam Portal</h1>
+        <p><strong>Exam Type:</strong> Final Exam - 2025</p>
+
+        <h2>Student Details</h2>
+        <form id="studentDetailsForm">
+            <label for="student_name">Student Name:</label>
+            <input type="text" id="student_name" placeholder="Enter your name" required><br>
+
+            <label for="section">Section:</label>
+            <input type="text" id="section" placeholder="Enter your section" required><br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="examPaperSection" style="display:none;">
+            <h2>Exam Paper</h2>
+            <div id="examQuestions"></div>
+        </div>
+    </div>
+
+    <script>
+        // Handle student details submission
+        document.getElementById('studentDetailsForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const studentName = document.getElementById('student_name').value;
+            const section = document.getElementById('section').value;
+            
+            // Save student details in localStorage
+            localStorage.setItem('studentName', studentName);
+            localStorage.setItem('section', section);
+            
+            // Fetch exam questions (simulated for now)
+            const questions = [
+                { id: 1, question: "What is 2 + 2?", options: ["3", "4", "5", "6"], correct: "B" },
+                { id: 2, question: "What is the capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], correct: "C" },
+                { id: 3, question: "Which planet is known as the Red Planet?", options: ["Earth", "Mars", "Jupiter", "Saturn"], correct: "B" }
+            ];
+            
+            // Display the exam questions
+            let examHTML = '';
+            questions.forEach((q, index) => {
+                examHTML += `
+                    <div class="question">
+                        <p><strong>${index + 1}. ${q.question}</strong></p>
+                        <label><input type="radio" name="question${q.id}" value="A"> ${q.options[0]}</label><br>
+                        <label><input type="radio" name="question${q.id}" value="B"> ${q.options[1]}</label><br>
+                        <label><input type="radio" name="question${q.id}" value="C"> ${q.options[2]}</label><br>
+                        <label><input type="radio" name="question${q.id}" value="D"> ${q.options[3]}</label><br>
+                    </div>
+                `;
+            });
+
+            // Show exam questions
+            document.getElementById('examQuestions').innerHTML = examHTML;
+            document.getElementById('examPaperSection').style.display = 'block';
+
+            // Disable student details form
+            document.getElementById('studentDetailsForm').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
