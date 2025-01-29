@@ -153,6 +153,7 @@
         <!-- Result Box -->
         <div id="resultBox">
             <h3>Exam Result</h3>
+            <p id="studentInfo"></p>
             <p id="totalMarks"></p>
             <p id="qualificationStatus"></p>
         </div>
@@ -204,7 +205,7 @@
             document.getElementById('studentDetailsForm').style.display = 'none';
 
             // Start timer
-            startTimer(5); // 5 minutes timer
+            startTimer(1); // 5 minutes timer
         });
 
         // Timer function
@@ -219,7 +220,8 @@
                 
                 if (timeRemaining <= 0) {
                     clearInterval(timerInterval);
-                    document.getElementById('submitButton').style.display = 'block'; // Show submit button
+                    // Automatically trigger the submit button after the timer ends
+                    submitExam();
                 }
                 timeRemaining--;
             }, 1000);
@@ -253,10 +255,13 @@
             document.getElementById('examPaperSection').classList.add('exam-locked');
 
             // Show result box with total marks and qualification status
+            const studentName = localStorage.getItem('studentName');
+            const studentId = localStorage.getItem('studentId');
             const totalMarks = correctAnswers;
             const qualificationStatus = totalMarks >= 2 ? 'Qualified' : 'Not Qualified';
 
             document.getElementById('resultBox').style.display = 'block';
+            document.getElementById('studentInfo').innerText = `Student Name: ${studentName}, ID: ${studentId}`;
             document.getElementById('totalMarks').innerText = `Total Marks: ${totalMarks} out of 6`;
             document.getElementById('qualificationStatus').innerText = `Qualification Status: ${qualificationStatus}`;
             document.getElementById('qualificationStatus').className = totalMarks >= 2 ? 'qualified' : 'not-qualified';
