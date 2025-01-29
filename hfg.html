@@ -121,6 +121,10 @@
         .exam-locked button {
             pointer-events: none;
         }
+
+        .exam-locked {
+            opacity: 0.6;
+        }
     </style>
 </head>
 <body>
@@ -168,6 +172,12 @@
             const studentId = document.getElementById('student_id').value;
             const section = document.getElementById('section').value;
             
+            // Check if student has already taken the exam
+            if (localStorage.getItem(studentId)) {
+                alert("You have already completed the exam!");
+                return;  // Prevent submitting form if exam already taken
+            }
+
             // Save student details in localStorage
             localStorage.setItem('studentName', studentName);
             localStorage.setItem('studentId', studentId);
@@ -265,6 +275,9 @@
             document.getElementById('totalMarks').innerText = `Total Marks: ${totalMarks} out of 6`;
             document.getElementById('qualificationStatus').innerText = `Qualification Status: ${qualificationStatus}`;
             document.getElementById('qualificationStatus').className = totalMarks >= 2 ? 'qualified' : 'not-qualified';
+
+            // Save that the student has completed the exam
+            localStorage.setItem(studentId, 'completed');
         }
     </script>
 </body>
