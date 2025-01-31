@@ -106,7 +106,7 @@
     </style>
 </head>
 <body>
-    <div id="timer">Time Left: 1:00</div>
+    <div id="timer">Time Left: 60:00</div>
 
     <div class="container">
         <h1>Welcome to DRK GLOBAL SCHOOL Exam Portal</h1>
@@ -158,13 +158,65 @@
             localStorage.setItem('section', section);
 
             const questions = [
-                { id: 1, question: "What is 2 + 2?", options: ["3", "4", "5", "6"], correct: "B" },
-                { id: 2, question: "What is the capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], correct: "C" },
-                { id: 3, question: "Which planet is known as the Red Planet?", options: ["Earth", "Mars", "Jupiter", "Saturn"], correct: "B" },
-                { id: 4, question: "Which is the full form of COVID?", options: ["covid", "Covid virus", "Co 19", "co vs"], correct: "B" },
-                { id: 5, question: "What is the value of 12+34?", options: ["12", "32", "46", "60"], correct: "C" },
-                { id: 6, question: "Choose the correct Name?", options: ["Apple", "Aplee", "Appele", "Appile"], correct: "A" }
-            ];
+    { id: 1, question: "Choose the option that best complete the sentence, The first of June was the day when?", options: ["The college will open", "the colleges opened", "the college was opened", "the college will be opened"], correct: "B" },
+    { id: 2, question: "Identify the correct synonym of the underlined word. Even in the face of crisis, I appreciate her restrained behavior.", options: ["Redundant", "Laborious", "Proactive", "Controlled"], correct: "D" },
+    { id: 3, question: "Identify the antonym of the underlined word. The gaucheness of adolescence is something that I fail to understand.", options: ["Compulsion", "Infidelity", "Politeness", "Awkwardness"], correct: "C" },
+    { id: 4, question: "Ephemeral : Transient :: Tenacious : ??", options: ["Persistent", "Fragile", "Resilient", "Fleeting"], correct: "A" },
+    { id: 5, question: "In the series 2, 6, 18, 54, …… what will be the 8th term?", options: ["4370", "4374", "7443", "7434"], correct: "B" },
+    { id: 6, question: "Solve for x: 3x^2 + 2x - 5 = 0", options: ["x = 1", "x = -1", "x = 5/3", "x = -5/3"], correct: "A" },
+    { id: 7, question: "A car travels from City A to City B at 60 km/h and returns at 40 km/h. What is the average speed?", options: ["48 km/h", "50 km/h", "52 km/h", "55 km/h"], correct: "A" },
+    { id: 8, question: "Find the missing number in the series: 2, 6, 12, 20, 30, ?", options: ["42", "45", "48", "50"], correct: "A" },
+    { id: 9, question: "Green vegetables are good for health. Arrange the sentences in correct order.", options: ["PSQR", "SRQP", "RSQP", "SQRP"], correct: "A" },
+    { id: 10, question: "27+K, 31+K, 89+K, 107+K, 156+K mean is 82 then mean of 130+K, 126+K, 68+K, 50+K, 1+K is?", options: ["55", "45", "95", "75"], correct: "D" },
+    { id: 11, question: "If (m-2) men can do a work in 'm' days, (m+7) men can do it 75% of work in (m-10) days then (m +10) men can do it in how many days?", options: ["21 days", "15 days", "12 days", "30 days"], correct: "B" },
+    { id: 12, question: "Which symbols should be placed in the blank spaces to complete the given expression: P _ R _ D _ U _ E", options: ["≥, ≥, ≤, ≤", ">, >, ≥, <", ">, ≥, <, =", "≥, =, ≥, <"], correct: "A" },
+    { id: 13, question: "In an election, one candidate got 55% of the valid votes, 20% were invalid. Total votes were 7500. How many valid votes did the other candidate get?", options: ["2500", "2700", "2900", "3100"], correct: "C" },
+    { id: 14, question: "A bag contains 50 P, 25 P, and 10 P coins in ratio 5:9:4, amounting to Rs. 206. Find the number of each type.", options: ["360, 160, 200", "160, 360, 200", "200, 360, 160", "200, 160, 300"], correct: "B" },
+    { id: 15, question: "All windows are doors. No door is a wall. Conclusions: 1. No window is a wall. 2. No wall is a door.", options: ["Only 1 follows", "Only 2 follows", "Either 1 or 2 follows", "Both 1 and 2 follow"], correct: "A" },
+    { id: 16, question: "What is the value of 'd' after executing: double d = Math.round(2.5 + Math.random());", options: ["2", "3", "4", "2.5"], correct: "B" },
+    { id: 17, question: "In a file containing \"I am a boy\r\n\", what will str contain after fgets()?", options: ["I am a boy\r\n\0", "I am a boy\r\0", "I am a boy\n\0", "I am a boy"], correct: "C" },
+    { id: 18, question: "What does the following declaration signify? int (*ptr)[30];", options: ["Pointer to an array of 30 integers", "Array of 30 integer pointers", "Pointer to a function returning int", "Array of 30 pointers"], correct: "A" },
+    { id: 19, question: "Which statement is correct?", options: ["Base class pointer cannot point to derived class", "Derived class pointer cannot point to base class", "Pointer to derived class cannot be created", "Pointer to base class cannot be created"], correct: "B" },
+    { id: 20, question: "How can you create a class variable?", options: ["Define it inside a method with 'var'", "Declare it outside any method with 'static'", "Use 'self' inside a method", "Define it inside constructor using 'init'"], correct: "B" },
+    { id: 21, question: "What happens when a class with only parameterized constructors is used and we create an object needing a zero-argument constructor?", options: ["Compile-time error", "Preprocessing error", "Runtime error", "Runtime exception"], correct: "A" },
+    { id: 22, question: "Mr. Thomas invested Rs. 13,900 in two schemes A and B with 14% and 11% simple interest. Total interest in 2 years is Rs. 3508. How much was invested in Scheme B?", options: ["Rs. 6500", "Rs. 7200", "Rs. 6400", "None of these"], correct: "B" },
+    { id: 23, question: "Which country experiences 6 months of day and 6 months of night?", options: ["Nepal", "Tibet", "Norway", "Iceland"], correct: "C" },
+    { id: 24, question: "Hari reached the office only after his manager _____________.", options: ["Arrived", "Has arrived", "Had arrived", "Arrives"], correct: "C" },
+    { id: 25, question: "Identify the synonym of the underlined word: The government clobbered the opposition’s proposals.", options: ["Pushed", "Accepted", "Appraisal", "Defeated"], correct: "D" },
+    { id: 26, question: "Identify the antonym of the underlined word: The company's perfidious actions towards its employees led to a major scandal.", options: ["Faithful", "Deceptive", "Ambitious", "Courageous"], correct: "A" },
+    { id: 27, question: "Synthesis: Integration :: Analysis : ?", options: ["Evaluation", "Breakdown", "Comparison", "Synthesis"], correct: "B" },
+    { id: 28, question: "Arrange the words given below as per order in the dictionary: Foible, Fervor, Flagrant, Felicity, Foment.", options: ["D, B, C, A, E", "B, C, A, E, D", "C, A, E, B, D", "D, B, A, C, E"], correct: "C" },
+    { id: 29, question: "Complete the series: A, C, E, G, __, K.", options: ["I", "J", "H", "L"], correct: "A" },
+    { id: 30, question: "Solve for y: 2y^2 + 5y - 3 = 0.", options: ["y = ½", "y = -3", "y = -1/2", "y = 3/2"], correct: "D" },
+    { id: 31, question: "A store has 250 items on sale for 15% off. If an additional 10% discount is applied, what is the total discount?", options: ["23.5%", "25%", "26.5%", "28%"], correct: "A" },
+    { id: 32, question: "Find the next number in the series: 1, 2, 4, 7, 11, 16, ?", options: ["26", "25", "22", "30"], correct: "C" },
+    { id: 33, question: "The leader of the villagers said that:", options: ["QPRS", "SQRP", "QRSP", "RSQP"], correct: "C" },
+    { id: 34, question: "The mean of P, Q, R is the same as the mean of Q, 2R, S. Then which is true?", options: ["P=R+S", "P=Q=S", "Q=R=S", "Q=P+S"], correct: "A" },
+    { id: 35, question: "Find the Quadratic Deviation (Q.D) of 30, 50, 90, 40, 60, 20.", options: ["17.5", "18.5", "11.5", "12.5"], correct: "A" },
+    { id: 36, question: "Reena took a loan of Rs. 1200 with simple interest for as many years as the rate of interest. If she paid Rs. 432 as interest at the end of the loan period, what was the rate of interest?", options: ["3.6", "6", "18", "Cannot be determined", "None of these"], correct: "B" },
+    { id: 37, question: "A man took a loan from a bank at the rate of 12% p.a. simple interest. After 3 years he had to pay Rs. 5400 interest only for the period. The principal amount borrowed by him was:", options: ["Rs. 2000", "Rs. 10,000", "Rs. 15,000", "Rs. 20,000"], correct: "C" },
+    { id: 38, question: "What command is used with vi editor to delete a single character?", options: ["x", "y", "a", "z", "None of the above"], correct: "A" },
+    { id: 39, question: "Which of the following is a string literal constant?", options: ["Visual C++", "137.45", "2,365", "All of the above"], correct: "D" },
+    { id: 40, question: "Which of the following will be the correct output for the program given below?\n\nnamespace IndiabixConsoleApplication { struct Sample { public int i; } class MyProgram { static void Main(string[] args) { Sample x = new Sample(); Sample y; x.i = 9; y = x; y.i = 5; Console.WriteLine(x.i + ' ' + y.i); }}}", options: ["9 9", "9 5", "5 5", "5 9", "None of the above"], correct: "B" },
+    { id: 41, question: "Out of fgets() and gets() which function is safe to use?", options: ["gets()", "fgets()", "gets()", "fget()"], correct: "B" },
+    { id: 42, question: "Y is in the East of X which is in the North of Z. If P is in the South of Z, then in which direction of Y, is P?", options: ["North", "South", "South-East", "None of these"], correct: "B" },
+    { id: 43, question: "Here are some words translated from an artificial language:\n\ndaftafoni means advisement\nimodafta means misadvise\nimolokti means misconduct\n\nWhich word could mean 'statement'?", options: ["kratafoni", "kratadafta", "loktifoni", "daftaimo"], correct: "D" },
+    { id: 44, question: "Which constructs an anonymous inner class instance?", options: ["Runnable r = new Runnable() { };", "Runnable r = new Runnable(public void run() { });", "Runnable r = new Runnable { public void run(){}};", "System.out.println(new Runnable() {public void run() { }});"], correct: "A" },
+    { id: 45, question: "Which statement, if placed in a class other than MyOuter or MyInner, instantiates an instance of the nested class?\n\npublic class MyOuter {\n public static class MyInner {\n public static void foo() { }\n }\n}", options: ["MyOuter.MyInner m = new MyOuter.MyInner();", "MyOuter.MyInner mi = new MyInner();", "MyOuter m = new MyOuter();", "MyOuter.MyInner mi = m.new MyOuter.MyInner();"], correct: "A" },
+    { id: 46, question: "What is the purpose of the len() method in Python classes in the context of polymorphism?", options: ["To define class attributes", "To customize the behavior when the len() function is called on an instance", "To access superclass attributes directly", "To create a new instance of the class"], correct: "B" },
+    { id: 47, question: "What is the role of the @classmethod decorator in encapsulation?", options: ["To define a private variable", "To create a class instance", "To provide a class method for a class", "To access a global variable"], correct: "C" },
+    { id: 48, question: "To ensure that every object in the array receives a destructor call, always delete memory allocated as an array with operator __________ .", options: ["destructor", "delete", "delete[]", "kill[]", "free[]"], correct: "C" },    { id: 49, question: "English can you communicate ___________ any other language?", options: ["Beside, in", "Besides, with", "Beside, with", "Besides, in"], correct: "D" },
+    { id: 50, question: "Choose the synonym of the underlined word: Most people cannot resist his charming behavior", options: ["Glorious", "Homely", "Enchanting", "Merciful"], correct: "C" },
+    { id: 51, question: "Identify the antonym of the underlined word: The politician's inscrutable behavior raised suspicions among his constituents.", options: ["Transparent", "Obscure", "Complex", "Ambiguous"], correct: "A" },
+    { id: 52, question: "Narcissism : Selflessness :: Altruism : ?", options: ["Selfishness", "Generosity", "Empathy", "Apathy"], correct: "A" },
+    { id: 53, question: "Arrange the words given below as per order in the dictionary: Illicit, Imminent, Immutable, Ideology, Inkpot", options: ["D, A, C, B, E", "D, A, B, C, E", "D, C, A, B, E", "E, D, A, B, C"], correct: "B" },
+    { id: 54, question: "What symbol comes next: *, $$, *, $$$$$, __?", options: ["*****", "****", "******", "$$$$$$"], correct: "A" },
+    { id: 55, question: "Solve for z: z/4 + 2 = 5", options: ["z = 12", "z = 16", "z = 20", "z = 24"], correct: "A" },
+    { id: 56, question: "A bakery sells 500 loaves of bread per day. If each loaf costs $2.50 and they make a 20% profit, what is the daily revenue?", options: ["$1000", "$1200", "$1250", "$1500"], correct: "D" },
+    { id: 57, question: "Find the missing number in the series: 3, 5, 9, 17, 33, ?", options: ["65", "67", "69", "71"], correct: "B" },
+    { id: 58, question: "A city located amidst green hills should be full of greenery. Which sequence best arranges the sentences?", options: ["BCAD", "DCBA", "ACDB", "ADCB"], correct: "A" }
+];
+
             
             let examHTML = '';
             questions.forEach((q, index) => {
@@ -186,21 +238,22 @@
             startTimer(1);
         });
 
-        function startTimer(minutes) {
-            let timeRemaining = minutes * 60;
-            const timerElement = document.getElementById('timer');
-            let timerInterval = setInterval(() => {
-                let mins = Math.floor(timeRemaining / 60);
-                let secs = timeRemaining % 60;
-                timerElement.innerHTML = `Time Left: ${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        function startTimer() {
+    let timeRemaining = 60 * 60; // 1 hour in seconds
+    const timerElement = document.getElementById('timer');
+    let timerInterval = setInterval(() => {
+        let mins = Math.floor(timeRemaining / 60);
+        let secs = timeRemaining % 60;
+        timerElement.innerHTML = `Time Left: ${mins}:${secs < 10 ? '0' : ''}${secs}`;
 
-                if (timeRemaining <= 0) {
-                    clearInterval(timerInterval);
-                    submitExam();
-                }
-                timeRemaining--;
-            }, 1000);
+        if (timeRemaining <= 0) {
+            clearInterval(timerInterval);
+            submitExam(); // Assuming this is your function to handle submission
         }
+        timeRemaining--;
+    }, 1000);
+}
+
 
         function submitExam() {
             const studentName = localStorage.getItem('studentName');
@@ -209,13 +262,78 @@
             // Count correct answers
             let correctAnswers = 0;
             const questions = [
-                { id: 1, correct: "B" },
-                { id: 2, correct: "C" },
-                { id: 3, correct: "B" },
-                { id: 4, correct: "B" },
-                { id: 5, correct: "C" },
-                { id: 6, correct: "A" }
-            ];
+    { id: 1, correct: "B" },
+    { id: 2, correct: "D" },
+    { id: 3, correct: "C" },
+    { id: 4, correct: "A" },
+    { id: 5, correct: "B" },
+    { id: 6, correct: "A" },
+    { id: 7, correct: "A" },
+    { id: 8, correct: "A" },
+    { id: 9, correct: "A" },
+    { id: 10, correct: "D" },
+    { id: 11, correct: "B" },
+    { id: 12, correct: "A" },
+    { id: 13, correct: "C" },
+    { id: 14, correct: "B" },
+    { id: 15, correct: "A" },
+    { id: 16, correct: "B" },
+    { id: 17, correct: "C" },
+    { id: 18, correct: "A" },
+    { id: 19, correct: "B" },
+    { id: 20, correct: "B" },
+    { id: 21, correct: "A" },
+    { id: 22, correct: "B" },
+    { id: 23, correct: "C" },
+    { id: 24, correct: "C" },
+    { id: 25, correct: "D" },
+    { id: 26, correct: "A" },
+    { id: 27, correct: "B" },
+    { id: 28, correct: "C" },
+    { id: 29, correct: "A" },
+    { id: 30, correct: "D" },
+    { id: 31, correct: "A" },
+    { id: 32, correct: "C" },
+    { id: 33, correct: "C" },
+    { id: 34, correct: "A" },
+    { id: 35, correct: "A" },
+    { id: 36, correct: "B" },
+    { id: 37, correct: "C" },
+    { id: 38, correct: "A" },
+    { id: 39, correct: "D" },
+    { id: 40, correct: "B" },
+    { id: 41, correct: "B" },
+    { id: 42, correct: "B" },
+    { id: 43, correct: "D" },
+    { id: 44, correct: "A" },
+    { id: 45, correct: "A" },
+    { id: 46, correct: "B" },
+    { id: 47, correct: "C" },
+    { id: 48, correct: "C" },
+    { id: 49, correct: "D" },
+    { id: 50, correct: "C" },
+    { id: 51, correct: "A" },
+    { id: 52, correct: "A" },
+    { id: 53, correct: "B" },
+    { id: 54, correct: "A" },
+    { id: 55, correct: "A" },
+    { id: 56, correct: "A" },
+    { id: 57, correct: "A" },
+    { id: 58, correct: "B" },
+    { id: 59, correct: "C" },
+    { id: 49, correct: "C" },
+{ id: 50, correct: "A" },
+{ id: 51, correct: "D" },
+{ id: 52, correct: "B" },
+{ id: 53, correct: "A" },
+{ id: 54, correct: "C" },
+{ id: 55, correct: "D" },
+{ id: 56, correct: "B" },
+{ id: 57, correct: "A" },
+       { id: 58, correct: "C" },
+
+];
+
 
             questions.forEach((q) => {
                 const selectedAnswer = document.querySelector(`input[name="question${q.id}"]:checked`);
